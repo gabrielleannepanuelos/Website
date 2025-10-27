@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gabrielle Anne | Portforlio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .gallery-grid {
+      column-count: 4;
+      column-gap: 1rem;
+    }
+
+    @media (max-width: 1024px) {
+      .gallery-grid {
+        column-count: 2;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .gallery-grid {
+        column-count: 1;
+      }
+    }
+
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <header class="bg-white shadow p-6">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Gabrielle Anne</h1>
+      <nav class="space-x-4">
+        <a href="#" class="hover:underline">Home</a>
+        <a href="#" class="hover:underline">About</a>
+        <a href="#" class="hover:underline">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-8">
+    <div class="flex flex-wrap gap-2 justify-center mb-8">
+      <button class="filter-btn bg-gray-300 px-4 py-2 rounded hover:bg-gray-400" data-filter="all">All</button>
+      <button class="filter-btn bg-gray-300 px-4 py-2 rounded hover:bg-gray-400" data-filter="nature">Landscape</button>
+      <button class="filter-btn bg-gray-300 px-4 py-2 rounded hover:bg-gray-400" data-filter="architecture">Architecture</button>
+      <button class="filter-btn bg-gray-300 px-4 py-2 rounded hover:bg-gray-400" data-filter="portraits">Portraits</button>
+    </div>
+
+    <div class="gallery-grid" id="gallery">
+        <div class="gallery-item nature">
+          <img src="images/pond1.jpg" alt="Landscape" class="w-full aspect-square shadow">
+        </div>
+        <div class="gallery-item nature">
+          <img src="images/pond2.jpg" alt="Landscape" class="w-full aspect-square shadow">
+        </div>
+        <div class="gallery-item nature">
+          <img src="images/pond3.JPG" alt="Landscape" class="w-full aspect-square shadow">
+        </div>
+        <div class="gallery-item nature">
+          <img src="images/trees1.JPG" alt="Landscape" class="w-full aspect-square shadow">
+        </div>
+        <div class="gallery-item nature">
+          <img src="images/trees2.JPG" alt="Landscape" class="w-full aspect-square shadow">
+        </div>
+        <div class="gallery-item nature">
+            <img src="images/trees3.JPG" alt="Landscape" class="w-full aspect-square shadow">
+          </div>
+          <div class="gallery-item nature">
+            <img src="images/trees4.JPG" alt="Landscape" class="w-full aspect-square shadow">
+          </div>
+        <div class="gallery-item nature">
+          <img src="images/flower1.JPG" alt="Landscape" class="w-full aspect-square shadow">
+        </div>
+        <div class="gallery-item nature">
+          <img src="images/flower2.JPG" alt="Landscape" class="w-full aspect-square shadow">
+        </div>
+        <div class="gallery-item nature">
+          <img src="images/flower3.JPG" alt="Landscape" class="w-full aspect-square shadow">
+        </div>
+        <div class="gallery-item nature">
+            <img src="images/flower4.JPG" alt="Landscape" class="w-full aspect-square shadow">
+          </div>
+          <div class="gallery-item nature">
+            <img src="images/plane1.jpg" alt="Landscape" class="w-full aspect-square shadow">
+          </div>
+        <div class="gallery-item architecture">
+          <img src="" alt="Architecture" class="w-full aspect-square shadow">
+        </div>
+        <div class="gallery-item portraits">
+          <img src="" alt="Portraits" class="w-full aspect-square shadow">
+        </div>
+      </div>
+      
+
+    </div>
+  </main>
+
+  <script>
+    const buttons = document.querySelectorAll('.filter-btn');
+    const items = document.querySelectorAll('.gallery-item');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+
+        items.forEach(item => {
+          if (filter === 'all' || item.classList.contains(filter)) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
