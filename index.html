@@ -146,5 +146,30 @@
       });
     });
   </script>
+  </main>
+
+    <footer class="bg-white text-gray-800 text-center py-4 mt-8 border-t">
+      <p>All Rights Reserved | Established October 2025</p>
+    </footer>
+  
+    <script>
+      const buttons = document.querySelectorAll('.filter-btn');
+      const items = document.querySelectorAll('.gallery-item');
+  
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const filter = btn.getAttribute('data-filter');
+  
+          items.forEach(item => {
+            if (filter === 'all' || item.classList.contains(filter)) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+    </script>
 </body>
+  </body>
 </html>
