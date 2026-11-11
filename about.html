@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,10 +9,10 @@
   <style>
     .book-jacket-card {
       font-family: 'Georgia', 'Times New Roman', Times, serif;
-      border: 1.5px solid #222;
+      border: 2px solid #222;
       background-color: #fff;
       color: #111;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     .book-jacket-text {
@@ -21,17 +22,17 @@
 
     .photo-float {
       float: right;
-      width: 48%;
-      margin-left: 1.25rem;
-      margin-bottom: 0.75rem;
+      width: 52%;
+      margin-left: 2rem;
+      margin-bottom: 1.25rem;
     }
 
-    @media (max-width: 540px) {
+    @media (max-width: 768px) {
       .photo-float {
         float: none;
         width: 100%;
         margin-left: 0;
-        margin-bottom: 1.25rem;
+        margin-bottom: 1.75rem;
       }
       .book-jacket-text {
         text-align: left;
@@ -52,22 +53,36 @@
     </div>
   </header>
 
-  <main class="container mx-auto px-4 py-12 flex-grow flex justify-center items-center">
-    <div class="book-jacket-card max-w-xl w-full p-8 md:p-10 shadow-sm">
+  <main class="container mx-auto px-4 py-10 md:py-16 flex-grow flex justify-center items-center">
+    <div class="book-jacket-card max-w-5xl w-full p-8 md:p-14 shadow-md">
       
       <div class="photo-float">
-        <img src="images/about-portrait.jpg" alt="Gabrielle Anne" class="w-full h-auto block">
+        <img 
+          src="images/about-portrait.jpg" 
+          alt="Gabrielle Anne" 
+          class="w-full h-auto block shadow-sm border border-gray-100"
+        >
       </div>
 
-      <h2 class="text-2xl font-bold tracking-tight mb-4 text-gray-950">The Photographer</h2>
-
-      <div class="book-jacket-text text-base text-gray-900 space-y-3">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6 text-gray-950">The Photographer</h2>
+      <div class="book-jacket-text text-lg md:text-xl text-gray-900 space-y-4">
         <p>
           Hi my name is Gabrielle Anne.
         </p>
         <p>
-          Photography is my hobby and I wanted to showcase it by creating an online gallery for my photos. I am an aspiring technologist that is currently learning how to code, so I thought it would be a good idea to practice by creating my own personal website.
+          Photography is my hobby and I wanted to showcase it by creating an online art gallery for my photos. I am an aspiring technologist and learning how to code, so I thought it would be a good idea to practice by creating my own personal website.
         </p>
       </div>
+
       <div style="clear: both;"></div>
     </div>
+  </main>
+
+  <footer class="bg-white text-gray-800 text-center py-4 border-t">
+    <p>All Rights Reserved | Established October 2025</p>
+  </footer>
+
+</body>
+</html>
+
+```
