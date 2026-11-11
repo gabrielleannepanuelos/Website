@@ -6,22 +6,17 @@
   <title>About | Gabrielle Anne</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    .book-jacket-card {
+    .bio-container {
       font-family: 'Georgia', 'Times New Roman', Times, serif;
-      border: 2px solid #222;
-      background-color: #fff;
-      color: #111;
       width: 92vw;
       max-width: 1350px;
-      min-height: 70vh;
       display: grid;
       grid-template-columns: 45% 55%;
-      gap: 2.5rem;
+      gap: 3rem;
       align-items: center;
-      padding: 3rem;
     }
 
-    .book-jacket-text {
+    .bio-text {
       text-align: justify;
       hyphens: auto;
       line-height: 1.8;
@@ -39,66 +34,85 @@
       width: 100%;
       max-height: 75vh;
       object-fit: cover;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      border: 1px solid #eee;
+      border-radius: 0.375rem;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
     }
 
     @media (max-width: 900px) {
-      .book-jacket-card {
+      .bio-container {
         grid-template-columns: 1fr;
-        padding: 1.5rem;
+        gap: 2rem;
         width: 95vw;
-        min-height: auto;
       }
-      .book-jacket-card > div:first-child {
+      .bio-container > div:first-child {
         order: 2;
       }
       .photo-container {
         order: 1;
-        margin-bottom: 1.5rem;
       }
-      .book-jacket-text {
+      .bio-text {
         text-align: left;
       }
     }
   </style>
 </head>
-<body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
+<body class="text-gray-800 relative min-h-screen bg-gray-50">
 
-  <header class="bg-white shadow p-6">
-    <div class="container mx-auto flex justify-between items-center">
-      <a href="index.html" class="text-4xl font-bold font-sans">Gabrielle Anne</a>
-      <nav class="space-x-4 font-sans">
-        <a href="index.html" class="hover:underline">Home</a>
-        <a href="about.html" class="underline font-semibold">About</a>
-        <a href="contact.html" class="hover:underline">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <div 
+    class="fixed inset-0 pointer-events-none" 
+    style="
+      background-image: url('images/flower3.JPG');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.22;
+      z-index: 0;
+    ">
+  </div>
 
-  <main class="w-full flex-grow flex justify-center items-center py-8">
-    <div class="book-jacket-card shadow-sm">
-      
-      <!-- Text Column (Left) -->
-      <div>
-        <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-gray-950 font-serif">
-          The Photographer
-        </h2>
-        <div class="book-jacket-text text-xl md:text-2xl text-gray-900 space-y-6">
-          <p>
-            Hi my name is Gabrielle Anne.
-          </p>
-          <p>
-            Photography is my hobby and I wanted to showcase it by creating an online art gallery for my photos. I am an aspiring technologist and learning how to code, so I thought it would be a good idea to practice by creating my own personal website.
-          </p>
+  <div class="relative z-10 flex flex-col min-h-screen">
+    <header class="bg-white shadow p-6">
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="index.html" class="text-4xl font-bold font-sans">Gabrielle Anne</a>
+        <nav class="space-x-4 font-sans">
+          <a href="index.html" class="hover:underline">Home</a>
+          <a href="about.html" class="underline font-semibold">About</a>
+          <a href="contact.html" class="hover:underline">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="w-full flex-grow flex justify-center items-center py-12 px-4">
+      <div class="bio-container">
+        
+        <div>
+          <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-gray-950 font-serif">
+            The Photographer
+          </h2>
+          <div class="bio-text text-xl md:text-2xl text-gray-900 space-y-6">
+            <p>
+              Hi my name is Gabrielle Anne.
+            </p>
+            <p>
+              Photography is my hobby and I wanted to showcase it by creating an online art gallery for my photos. I am an aspiring technologist and learning how to code, so I thought it would be a good idea to practice by creating my own personal website.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div class="photo-container">
-        <img 
-          src="images/about-portrait.jpg" 
-          alt="Gabrielle Anne"
-        >
-      </div>
+        <div class="photo-container">
+          <img 
+            src="images/about-portrait.jpg" 
+            alt="Gabrielle Anne"
+          >
+        </div>
 
-    </div>
+      </div>
+    </main>
+
+    <footer class="bg-white text-gray-800 text-center py-4 border-t font-sans">
+      <p>All Rights Reserved | Established October 2025</p>
+    </footer>
+  </div>
+
+</body>
+</html>
