@@ -7,25 +7,34 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
     .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
+      column-count: 4;
+      column-gap: 1rem;
     }
 
     @media (max-width: 1024px) {
       .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
+        column-count: 2;
       }
     }
 
     @media (max-width: 640px) {
       .gallery-grid {
-        grid-template-columns: 1fr;
+        column-count: 1;
       }
     }
 
     .gallery-item {
-      overflow: hidden;
+      break-inside: avoid;
+      -webkit-column-break-inside: avoid;
+      margin-bottom: 1rem;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
       border-radius: 0.25rem;
     }
   </style>
@@ -67,82 +76,82 @@
 
       <div class="gallery-grid" id="gallery">
         <div class="gallery-item nature">
-          <img src="images/pond1.jpg" alt="Landscape" class="w-full aspect-square object-cover shadow">
+          <img src="images/pond1.jpg" alt="Landscape" class="shadow">
         </div>
         <div class="gallery-item nature">
-          <img src="images/pond2.jpg" alt="Landscape" class="w-full aspect-square object-cover shadow">
+          <img src="images/pond2.jpg" alt="Landscape" class="shadow">
         </div>
         <div class="gallery-item nature">
-          <img src="images/pond3.JPG" alt="Landscape" class="w-full aspect-square object-cover shadow">
+          <img src="images/pond3.JPG" alt="Landscape" class="shadow">
         </div>
         <div class="gallery-item nature">
-          <img src="images/trees1.JPG" alt="Landscape" class="w-full aspect-square object-cover shadow">
+          <img src="images/trees1.JPG" alt="Landscape" class="shadow">
         </div>
         <div class="gallery-item nature">
-          <img src="images/trees2.JPG" alt="Landscape" class="w-full aspect-square object-cover shadow">
+          <img src="images/trees2.JPG" alt="Landscape" class="shadow">
         </div>
         <div class="gallery-item nature">
-          <img src="images/trees3.JPG" alt="Landscape" class="w-full aspect-square object-cover shadow">
+          <img src="images/trees3.JPG" alt="Landscape" class="shadow">
         </div>
         <div class="gallery-item nature">
-          <img src="images/trees4.JPG" alt="Landscape" class="w-full aspect-square object-cover shadow">
+          <img src="images/trees4.JPG" alt="Landscape" class="shadow">
         </div>
         <div class="gallery-item nature">
-          <img src="images/flower1.JPG" alt="Landscape" class="w-full aspect-square object-cover shadow">
+          <img src="images/flower1.JPG" alt="Landscape" class="shadow">
         </div>
         <div class="gallery-item nature">
-          <img src="images/flower2.JPG" alt="Landscape" class="w-full aspect-square object-cover shadow">
+          <img src="images/flower2.JPG" alt="Landscape" class="shadow">
         </div>
         <div class="gallery-item nature">
-          <img src="images/flower3.JPG" alt="Landscape" class="w-full aspect-square object-cover shadow">
+          <img src="images/flower3.JPG" alt="Landscape" class="shadow">
         </div>
         <div class="gallery-item nature">
-          <img src="images/flower4.JPG" alt="Landscape" class="w-full aspect-square object-cover shadow">
+          <img src="images/flower4.JPG" alt="Landscape" class="shadow">
         </div>
         <div class="gallery-item nature">
-          <img src="images/plane1.jpg" alt="Landscape" class="w-full aspect-square object-cover shadow">
+          <img src="images/plane1.jpg" alt="Landscape" class="shadow">
         </div>
         <div class="gallery-item nature">
-          <img src="images/palm.jpg" alt="Landscape" class="w-full aspect-square object-cover shadow">
+          <img src="images/palm.jpg" alt="Landscape" class="shadow">
         </div>
         <div class="gallery-item nature">
-          <img src="images/sunsethwy6.jpg" alt="Landscape" class="w-full aspect-square object-cover shadow">
+          <img src="images/sunsethwy6.jpg" alt="Landscape" class="shadow">
         </div>
         <div class="gallery-item nature">
-          <img src="images/sunsethwy62.jpg" alt="Landscape" class="w-full aspect-square object-cover shadow">
+          <img src="images/sunsethwy62.jpg" alt="Landscape" class="shadow">
         </div>
         <div class="gallery-item nature">
-          <img src="images/sunsethwy63.jpg" alt="Landscape" class="w-full aspect-square object-cover shadow">
+          <img src="images/sunsethwy63.jpg" alt="Landscape" class="shadow">
         </div>
         <div class="gallery-item nature">
-          <img src="images/paintedladiespark.jpg" alt="Landscape" class="w-full aspect-square object-cover shadow">
+          <img src="images/paintedladiespark.jpg" alt="Landscape" class="shadow">
         </div>
         <div class="gallery-item architecture">
-          <img src="images/downtownbuilding1.jpg" alt="Architecture" class="w-full aspect-square object-cover shadow">
+          <img src="images/downtownbuilding1.jpg" alt="Architecture" class="shadow">
         </div>
         <div class="gallery-item architecture">
-          <img src="images/downtownbuilding2.jpg" alt="Architecture" class="w-full aspect-square object-cover shadow">
+          <img src="images/downtownbuilding2.jpg" alt="Architecture" class="shadow">
         </div>
         <div class="gallery-item architecture">
-          <img src="images/goldengate.jpg" alt="Architecture" class="w-full aspect-square object-cover shadow">
+          <img src="images/goldengate.jpg" alt="Architecture" class="shadow">
         </div>
         <div class="gallery-item architecture">
-          <img src="images/paintedladiespark2.jpg" alt="Architecture" class="w-full aspect-square object-cover shadow">
+          <img src="images/paintedladiespark2.jpg" alt="Architecture" class="shadow">
         </div>
         <div class="gallery-item portraits">
-          <img src="images/luna.jpg" alt="Portraits" class="w-full aspect-square object-cover shadow">
+          <img src="images/luna.jpg" alt="Portraits" class="shadow">
         </div>
         <div class="gallery-item portraits">
-          <img src="images/luna2.jpg" alt="Portraits" class="w-full aspect-square object-cover shadow">
+          <img src="images/luna2.jpg" alt="Portraits" class="shadow">
         </div>
         <div class="gallery-item portraits">
-          <img src="images/luna3.jpg" alt="Portraits" class="w-full aspect-square object-cover shadow">
+          <img src="images/luna3.jpg" alt="Portraits" class="shadow">
         </div>
       </div>
     </main>
 
     <footer class="bg-white text-gray-800 text-center py-4 mt-8 border-t">
-      <p>All Rights Reserved | Currently under maintenance :) </p>
+      <p>All Rights Reserved | Established October 2025</p>
     </footer>
   </div>
 
@@ -156,13 +165,3 @@
 
         items.forEach(item => {
           if (filter === 'all' || item.classList.contains(filter)) {
-            item.style.display = 'block';
-          } else {
-            item.style.display = 'none';
-          }
-        });
-      });
-    });
-  </script>
-</body>
-</html>
