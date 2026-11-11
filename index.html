@@ -31,6 +31,11 @@
       width: 100%;
     }
 
+    /* Guaranteed hiding when filtered out */
+    .gallery-item.is-hidden {
+      display: none !important;
+    }
+
     .gallery-item img {
       width: 100%;
       height: auto;
@@ -67,11 +72,12 @@
     </header>
 
     <main class="container mx-auto px-4 py-8 flex-grow">
+      <!-- Filter Buttons -->
       <div class="flex flex-wrap gap-2 justify-center mb-8">
-        <button class="filter-btn bg-gray-300 px-4 py-2 rounded hover:bg-gray-400" data-filter="all">All</button>
-        <button class="filter-btn bg-gray-300 px-4 py-2 rounded hover:bg-gray-400" data-filter="nature">Landscape</button>
-        <button class="filter-btn bg-gray-300 px-4 py-2 rounded hover:bg-gray-400" data-filter="architecture">Architecture</button>
-        <button class="filter-btn bg-gray-300 px-4 py-2 rounded hover:bg-gray-400" data-filter="portraits">Portraits</button>
+        <button class="filter-btn bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700 transition" data-filter="all">All</button>
+        <button class="filter-btn bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400 transition" data-filter="nature">Landscape</button>
+        <button class="filter-btn bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400 transition" data-filter="architecture">Architecture</button>
+        <button class="filter-btn bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400 transition" data-filter="portraits">Portraits</button>
       </div>
 
       <div class="gallery-grid" id="gallery">
@@ -163,5 +169,24 @@
       btn.addEventListener('click', () => {
         const filter = btn.getAttribute('data-filter');
 
+        // Update button visual styles
+        buttons.forEach(b => {
+          b.classList.remove('bg-gray-800', 'text-white');
+          b.classList.add('bg-gray-300', 'text-gray-800');
+        });
+        btn.classList.remove('bg-gray-300', 'text-gray-800');
+        btn.classList.add('bg-gray-800', 'text-white');
+
+        // Filter items cleanly using class toggling
         items.forEach(item => {
           if (filter === 'all' || item.classList.contains(filter)) {
+            item.classList.remove('is-hidden');
+          } else {
+            item.classList.add('is-hidden');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
